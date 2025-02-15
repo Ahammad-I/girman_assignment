@@ -5,10 +5,10 @@
  
  const router = express.Router();
  
- router.get('/permissions', auth, checkPermission('READ_PERMISSIONS'), permissionController.getPermissions);
+ router.get('/', auth, checkPermission('READ_PERMISSIONS'), permissionController.getPermissions);
   
 //  router.get('/permissions', permissionController.getPermissions);
- router.post('/permissions', auth, checkPermission('CREATE_PERMISSION'), permissionController.createPermission);
+ router.post('/', auth, checkPermission('CREATE_PERMISSION'), permissionController.createPermission);
 //  router.post('/permissions', permissionController.createPermission);
  
  export default router;

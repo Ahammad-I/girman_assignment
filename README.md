@@ -59,24 +59,55 @@ npm start
 ## API Documentation
 
 ### User Management
-- `POST /api/users` - Create new user
-- `GET /api/users` - Get all users
-- `PUT /api/users/:id/role` - Update user role
+- `POST     http://localhost:3000/api/auth/register ` - Create new user
+- `GET   http://localhost:3000/api/auth/users` - Get all users
+- `POST http://localhost:3000/api/auth/login` -  Login User
+-`POST http://localhost:3000/api/auth/login` - Login Admin
 
 ### Role Management
-- `GET /api/roles` - Get all roles
-- `PUT /api/roles/:id/permissions` - Update role permissions
+-`POST http://localhost:3000/api/roles  - Create Role
+- `GET http://localhost:3000/api/roles  - Get all roles
+- `PATCH  http://localhost:3000/api/roles/permissions` - Update role permissions
 
 ### Permission Management
-- `GET /api/permissions` - Get all permissions
-- `POST /api/permissions` - Create new permission
+-POST    http://localhost:3000/api/permissions    - Create permission
+- `GET  http://localhost:3000/api/permissions` - Get all permissions
+- `GET http://localhost:3000/api/roles/:roleid/permissions` -  Get all permissions of a specific user 
 
-### Audit Logging (Bonus)
-- `GET /api/audit` - Get audit logs
+### Audit Logging 
+- `GET http://localhost:3000/api/audit/audit-logs` - Get audit logs
 - Query parameter: `hours` (default: 24) to specify time range
 
+### POST 
+-POST  http://localhost:3000/api/posts  - Create Post 
+- GET http://localhost:3000/api/posts/  - Get all posts
+- GET http://localhost:3000/api/posts/:postId  - Get all posts by a specific user 
+- PUT http://localhost:3000/api/posts/:postId  -update post 
+- Delete http://localhost:3000/api/posts/:postId - delete post 
+
+
  
- 
+
+SAMPLE ADMIN RECORD TO TEST ALL API'S
+    "message": "Login successful",
+    "data": {
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2FmYThlYTJmMTdiOGMxZDBhNjhjNmYiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Mzk2MTE4MjgsImV4cCI6MTczOTY5ODIyOH0.lXnxbYaJf4W06mFR-TTqzG8TpgQWTGs5itbQkWnssXI",
+        "user": {
+            "id": "67afa8ea2f17b8c1d0a68c6f",
+            "username": "Admin",
+            "email": "admin@gmail.com",
+            "role": "admin"
+        }
+    }
+}
+ SAMPLE USER RECORD TO TEST API'S
+
+ {
+  "username": "Admin",
+  "email": "admin@gmail.com",
+    "password": "admin@123",
+  "role": "user"  // Optional, defaults to "staff"
+}
 ```
 
 ## Git Workflow
@@ -96,17 +127,11 @@ npm start
 Run the test suite:
 ```bash
 npm test
-```
 
- 
- 
-```
- 
-```
 
 ## Deployment
 The application is deployed on [Platform Name] and can be accessed at:
-[Deployment URL]
+https://ec2-44-201-75-136.compute-1.amazonaws.com
 
 ## Postman Collection
 Import the Postman collection for testing the APIs:
@@ -120,6 +145,6 @@ Import the Postman collection for testing the APIs:
 5. Request code review
 
 ## Author
-[Your Name]
+Nadendla Ahammad Hussain
 
  

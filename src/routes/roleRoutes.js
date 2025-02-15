@@ -5,9 +5,8 @@
  
  const router = express.Router();
  
- router.get('/roles', auth, checkPermission('READ_ROLES'), roleController.getRoles);
- router.patch('/roles/permissions', auth, checkPermission('UPDATE_ROLE_PERMISSIONS'), roleController.updateRolePermissions);
-//  router.post('/role', roleController.createRole);
- router.post('/role', auth, checkPermission('CREATE_ROLE'), roleController.createRole);
+ router.get('/', auth, checkPermission('READ_ROLES'), roleController.getRoles);
+ router.patch('/permissions', auth, checkPermission('UPDATE_ROLE_PERMISSIONS'), roleController.updateRolePermissions);
+ router.post('/', auth, checkPermission('CREATE_ROLE'), roleController.createRole);
  router.get('/:roleId/permissions', auth, checkPermission('READ_ROLES'), roleController.getRolePermissions);
  export default router;
