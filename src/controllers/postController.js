@@ -1,4 +1,4 @@
-import Post from './models/Post.js';
+import Post from '../models/post.js';
 
 export const postController = {
   // Create a new post

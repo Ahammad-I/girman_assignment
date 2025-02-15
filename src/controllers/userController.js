@@ -58,7 +58,7 @@ export const userController = {
   },
 
   // Update user role
-  updateUserRole: async (req, res) => {
+  /*updateUserRole: async (req, res) => {
     try {
       const { userId, role } = req.body;
       
@@ -93,5 +93,5 @@ export const userController = {
         message: error.message
       });
     }
-  }
+  }*/
 };
