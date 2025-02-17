@@ -1,7 +1,7 @@
 import Post from '../models/post.js';
 
 export const postController = {
-  // Create a new post
+  
   createPost: async (req, res) => {
     try {
       const { title, content } = req.body;
@@ -25,7 +25,7 @@ export const postController = {
     }
   },
 
-  // Get all posts
+ 
   getPosts: async (req, res) => {
     try {
       const posts = await Post.find().populate('userId', 'name email');
@@ -35,7 +35,7 @@ export const postController = {
     }
   },
 
-  // Get a single post by ID
+
   getPostById: async (req, res) => {
     try {
       const post = await Post.findById(req.params.id).populate('userId', 'name email');
@@ -50,7 +50,7 @@ export const postController = {
     }
   },
 
-  // Update a post
+
   updatePost: async (req, res) => {
     try {
       const { title, content } = req.body;
@@ -71,7 +71,7 @@ export const postController = {
     }
   },
 
-  // Delete a post
+
   deletePost: async (req, res) => {
     try {
       const post = await Post.findById(req.params.id);

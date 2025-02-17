@@ -1,4 +1,4 @@
- // middleware/rbac.js
+
 import Role from '../models/Role.js';
 import { auditController } from '../controllers/auditController.js';
 

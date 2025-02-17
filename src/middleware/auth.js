@@ -1,4 +1,4 @@
- // middleware/auth.js
+ 
 import jwt from 'jsonwebtoken';
 import { config } from '../config/config.js';
 import User from '../models/User.js';
@@ -35,5 +35,5 @@ export const auth = async (req, res, next) => {
 };
 
  
-// middleware/errorHandler.js
+
  

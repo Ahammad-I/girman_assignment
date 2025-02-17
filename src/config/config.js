@@ -1,6 +1,6 @@
-// config/config.js
+
 export const config = {
-    jwtSecret: process.env.JWT_SECRET || 'your-secret-key',
+    jwtSecret: process.env.JWT_SECRET || 'AHAMAD',
     jwtExpiration: '24h',
     roles: {
       ADMIN: 'admin',

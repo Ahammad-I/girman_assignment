@@ -1,9 +1,9 @@
- // controllers/roleController.js
+
 import Role from '../models/Role.js';
 // import { config } from '../config/config.js';
 
 export const roleController = {
-  // Get all roles
+
   getRoles: async (req, res) => {
     try {
       const roles = await Role.find().populate('permissions');
@@ -19,7 +19,7 @@ export const roleController = {
     }
   },
 
-  // Update role permissions
+  
   updateRolePermissions: async (req, res) => {
     try {
       const { roleId, permissions,description} = req.body;
@@ -80,7 +80,7 @@ export const roleController = {
     try {
         const { roleId } = req.params;
 
-        // Find the role and populate permissions
+        
         const role = await Role.findById(roleId).populate('permissions');
 
         if (!role) {

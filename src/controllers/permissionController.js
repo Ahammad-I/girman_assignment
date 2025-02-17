@@ -1,8 +1,8 @@
- // controllers/permissionController.js
+ 
  import Permission from '../models/Permission.js';
  
  export const permissionController = {
-   // Get all permissions
+   
    getPermissions: async (req, res) => {
      try {
        const permissions = await Permission.find();
@@ -18,7 +18,7 @@
      }
    },
  
-   // Create new permission
+  
    createPermission: async (req, res) => {
      try {
        const { name, description, resource, action } = req.body;

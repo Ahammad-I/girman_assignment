@@ -59,39 +59,41 @@ npm start
 ## API Documentation
 
 ### User Management
-- `POST     http://localhost:3000/api/auth/register ` - Create new user
-- `GET   http://localhost:3000/api/auth/users` - Get all users
-- `POST http://localhost:3000/api/auth/login` -  Login User
--`POST http://localhost:3000/api/auth/login` - Login Admin
+- `POST      http://ec2-44-201-75-136.compute-1.amazonaws.com/api/auth/register` - Create new user
+- `GET    http://ec2-44-201-75-136.compute-1.amazonaws.com/api/auth/users` - Get all users
+- `POST  http://ec2-44-201-75-136.compute-1.amazonaws.com/api/auth/login` -  Login User
+-`POST  http://ec2-44-201-75-136.compute-1.amazonaws.com/api/auth/login` - Login Admin
 
 ### Role Management
--`POST http://localhost:3000/api/roles  - Create Role
-- `GET http://localhost:3000/api/roles  - Get all roles
-- `PATCH  http://localhost:3000/api/roles/permissions` - Update role permissions
+-`POST  http://ec2-44-201-75-136.compute-1.amazonaws.com/api/roles  - Create Role
+- `GET  http://ec2-44-201-75-136.compute-1.amazonaws.com/api/roles  -Listroles
+- `PATCH   http://ec2-44-201-75-136.compute-1.amazonaws.com/api/roles/permissions` - Update role permissions
 
 ### Permission Management
--POST    http://localhost:3000/api/permissions    - Create permission
-- `GET  http://localhost:3000/api/permissions` - Get all permissions
-- `GET http://localhost:3000/api/roles/:roleid/permissions` -  Get all permissions of a specific user 
+-POST    http://ec2-44-201-75-136.compute-1.amazonaws.com/api/permissions    - Create permission
+- `GET   http://ec2-44-201-75-136.compute-1.amazonaws.com/api/permissions` - Get all permissions
+- `GET http://ec2-44-201-75-136.compute-1.amazonaws.com/api/roles/67af9b986616f04a85d12911/permissions` -  Get all permissions of a specific user 
 
 ### Audit Logging 
-- `GET http://localhost:3000/api/audit/audit-logs` - Get audit logs
+- `GET http://ec2-44-201-75-136.compute-1.amazonaws.com/api/audit/audit-logs` - Get audit logs
 - Query parameter: `hours` (default: 24) to specify time range
 
 ### POST 
--POST  http://localhost:3000/api/posts  - Create Post 
-- GET http://localhost:3000/api/posts/  - Get all posts
-- GET http://localhost:3000/api/posts/:postId  - Get all posts by a specific user 
-- PUT http://localhost:3000/api/posts/:postId  -update post 
-- Delete http://localhost:3000/api/posts/:postId - delete post 
+-POST  http://ec2-44-201-75-136.compute-1.amazonaws.com/api/posts  - Create Post 
+- GET http://ec2-44-201-75-136.compute-1.amazonaws.com/api/posts/  - Get all posts
+- GET http://ec2-44-201-75-136.compute-1.amazonaws.com/api/posts/:postId  - Get all posts by a specific user 
+- PUT http://ec2-44-201-75-136.compute-1.amazonaws.com/api/posts/:postId  -update post 
+- Delete http://ec2-44-201-75-136.compute-1.amazonaws.com/api/posts/:postId  - delete post 
 
 
  
 
 SAMPLE ADMIN RECORD TO TEST ALL API'S
+ {
+    "success": true,
     "message": "Login successful",
     "data": {
-        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2FmYThlYTJmMTdiOGMxZDBhNjhjNmYiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Mzk2MTE4MjgsImV4cCI6MTczOTY5ODIyOH0.lXnxbYaJf4W06mFR-TTqzG8TpgQWTGs5itbQkWnssXI",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2FmYThlYTJmMTdiOGMxZDBhNjhjNmYiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3Mzk3Njc2NDEsImV4cCI6MTczOTg1NDA0MX0.9KhQbmDFjGjqmm7jmJgObBeNUWOV1gAyyHEW11wFXeI",
         "user": {
             "id": "67afa8ea2f17b8c1d0a68c6f",
             "username": "Admin",
@@ -100,14 +102,7 @@ SAMPLE ADMIN RECORD TO TEST ALL API'S
         }
     }
 }
- SAMPLE USER RECORD TO TEST API'S
 
- {
-  "username": "Admin",
-  "email": "admin@gmail.com",
-    "password": "admin@123",
-  "role": "user"  // Optional, defaults to "staff"
-}
 ```
 
 ## Git Workflow
@@ -123,26 +118,17 @@ SAMPLE ADMIN RECORD TO TEST ALL API'S
    - Create pull request for review
    - Merge to master after approval
 
-## Testing
-Run the test suite:
-```bash
-npm test
 
 
 ## Deployment
-The application is deployed on [Platform Name] and can be accessed at:
+The application is deployed on AWS and can be accessed at:
 https://ec2-44-201-75-136.compute-1.amazonaws.com
 
 ## Postman Collection
 Import the Postman collection for testing the APIs:
-[Postman Collection Link]
+https://girman-assignment.postman.co/workspace/New-Team-Workspace~a0a59dfa-a284-4237-a28c-e643e2044155/collection/40174582-0b92f0ee-7eff-4f31-8e00-53f6ddcbb273?action=share&creator=40174582
 
-## Contributing
-1. Create a feature branch from master
-2. Make your changes
-3. Create a pull request with detailed description
-4. Ensure all tests pass
-5. Request code review
+
 
 ## Author
 Nadendla Ahammad Hussain

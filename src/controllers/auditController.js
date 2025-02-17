@@ -1,12 +1,12 @@
 
-// controllers/auditController.js
+
 import AuditLog from '../models/AuditLog.js';
 import User from '../models/User.js';
 import jwt from 'jsonwebtoken';
 import { config } from '../config/config.js';
 
 export const auditController = {
-  // Get audit logs
+ 
   getAuditLogs: async (req, res) => {
     try {
       const { hours = 24 } = req.query;
@@ -30,8 +30,7 @@ export const auditController = {
     login: async (req, res) => {
       try {
         const { email, password } = req.body;
-  
-        // Check if user exists
+
         const user = await User.findOne({ email });
         if (!user) {
           return res.status(401).json({
@@ -40,7 +39,7 @@ export const auditController = {
           });
         }
   
-        // Verify password
+ 
         const isValidPassword = await user.comparePassword(password);
         if (!isValidPassword) {
           return res.status(401).json({
@@ -49,7 +48,7 @@ export const auditController = {
           });
         }
   
-        // Generate JWT token
+   
         const token = jwt.sign(
           { 
             userId: user._id,
@@ -59,7 +58,7 @@ export const auditController = {
           { expiresIn: config.jwtExpiration }
         );
 
-        // Return user info and token
+         
         res.json({
           success: true,
           message: 'Login successful',
@@ -81,7 +80,7 @@ export const auditController = {
         });
       }
     },
-      // Create audit log
+      
   createAuditLog: async (userId, action, resource, outcome) => {
     try {
       await AuditLog.create({
